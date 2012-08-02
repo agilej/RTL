@@ -15,11 +15,13 @@
 		<tbody>
 			<c:forEach var="user" items="${users}">
 				<tr>
-					<td>${user.login}</td>
+					<td><a href='<c:url value="/user/${user.id}"/>' > ${user.login} </a></td>
 					<td>${user.email}</td>
 				</tr>
 			</c:forEach>
 		</tbody>
 	</table>
+	
+	<r:paginate data="${users}"></r:paginate>
 
 </r:layout>

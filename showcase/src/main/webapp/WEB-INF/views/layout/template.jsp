@@ -15,7 +15,8 @@
 <r:yieldJavascripts />
 </head>
 <body>
-    <div>
+    <div id="header"><h1>R-Tag Showcase app</h1></div>
+    <div id="content">
         <div id="sidebar">
 			<ul>
 				<li><a href="<c:url value='/users'/>">User List</a></li>
@@ -25,6 +26,8 @@
         <div id="main">
             <r:yieldBody></r:yieldBody>
         </div>
+
+        <div id="clear"></div>
     </div>
 </body>
 </html>
