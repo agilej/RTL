@@ -1,0 +1,19 @@
+body {
+	width: 960px;
+	margin: auto;
+	min-height: 540px;
+}
+
+#sidebar{
+	width: 240px;
+	height: 500px;
+	background-color: orange;
+	padding-top: 150px;	
+	display:inline-block;
+}
+
+#main{
+	width: 700px;
+	display:inline-block;	
+	padding-top: 150px;
+}
