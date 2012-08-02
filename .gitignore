@@ -1,0 +1,17 @@
+
+target/
+
+.settings/org.eclipse.wst.common.project.facet.core.xml
+
+.settings/org.eclipse.jdt.core.prefs
+
+src/main/java/me/donnior/fava/FArrayList.java
+
+.settings/org.eclipse.wst.common.component
+
+.project
+
+.classpath
+
+*.svn-base
+*.svn*
