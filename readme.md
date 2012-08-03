@@ -1,8 +1,18 @@
-# 模版标签
+There are two category tags in the package:
 
-## 使用
+* Tags for template
+* Tags for paginate
 
- 修改模版位置至项目实际位置，在web.xml中配置（确保参数名为"tftTempatePage"）; 如果不配置，将默认使用 <code>WEB-INF/views/layout/template.jsp</code> 作为模版
+# Templating Tags
+
+## How to use
+
+add dependency in maven.
+```
+...
+```
+
+set the template page in web.xml, make sure the param name is `tftTempatePage`; if not, RTL will use the default template page which is <code>WEB-INF/views/layout/template.jsp</code>
 
 ```xml
 <context-param>
@@ -11,7 +21,7 @@
 </context-param>
 ```
 
-## 定义模版
+## Define your template page
 ```html
 <!DOCTYPE html>
 <html>
@@ -47,9 +57,8 @@
 </html>
 ```
 
-## 使用模版
+## Use the template in your every page needed to be templated. Like this:
 
-在单个需要使用模版的页面使用
 ```html
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
@@ -66,34 +75,35 @@
 </r:layout>
 ```
 
-## 各标签详解
+## Tags Explain
 
 * yieldTitle       
-    `用于模版定义中，使用此标签来为模版设置单独页面的标题`
+    `Used in template page, can set the single page's title`
 * yieldStylesheets  
-    `用于模版定义中，使用此标签来为模版设置单独页面需要的样式文件`
+    `Used in template page, add the page specific style`
 * yieldJavascripts  
-    `用于模版定义中，使用此标签来为模版设置单独页面需要的脚本文件`
+    `Used in template page, add the page specific javascript`
 * yieldBody  
-    `用于模版定义中，使用此标签来输出各页面的内容`
+    `Used in template page, output the your templated page`
+
 * layout  
-    `用于需要使用模版的页面，使用此标签来应用模版`
+    `Used in templated page, declare current page needs templated`
 * stylesheet  
-    `用于需要使用模版的页面，使用此标签来为单独页面设置个性化需要的样式文件`
+    `Used in templated page, specify one stylesheet which needed by current page`
 * javascript  
-    `用于需要使用模版的页面，使用此标签来为单独页面设置个性化需要的脚本文件`
+    `Used in templated page, specify one javascript which needed by current page`
 
 
-# Paginate(分页)标签库
+# Paginate Tags  
 
-## 安装及使用
+## How to use
 
-在国际化文件中添加标签库需要的i18n资源,如
+Set the i18n resouces needed by the paginate tag, this step is required.
 
-    default.paginate.label.previous = 上一页标签文字
-    default.paginate.label.next = 下一页标签文字
+    default.paginate.label.previous = Previous Page
+    default.paginate.label.next = Next Page
 
-在DAO中需要支持分页的方法中返回PaginateSupportArray代替常规ArrayList
+Use the PaginateSupportArray to wrap your normal List which will be used on the paginating page.
 ```java
 public List<User> listAllUsers(int page, int pageSize){
     List<User> users = // get record from database
@@ -105,14 +115,15 @@ public List<User> listAllUsers(int page, int pageSize){
     return list;
 }
 ```
-在JSP中使用分页组件
+
+Use the wrapped List in jsp
 ```xml
 <r:paginate data="${results}" />
 ```
 
-## 自定义样式
+## Customize Style
 
-分页组件将生成如下内容的html代码，不设置任何样式，用户可以根据需要定义样式
+The paginate tag will generate the following html code without any specific styles, you can set styles in your css file.
 ```html
 <div class="pagination">
     <a href="/xxx?page=2" title="Next Page" class="label pre">Previous Page</a>
@@ -123,16 +134,16 @@ public List<User> listAllUsers(int page, int pageSize){
 </div>
 ```
 
-## paginate标签属性详解
+## Paginate Tag's attributes explain
 
 <table>
     <tr>
-        <th>属性名</th><th>是否必需</th><th>用途</th><th>说明</th>
+        <th>Attribute Name</th><th>Required</th><th>Usage</th><th>Note</th>
     </tr>
-    <tr><td>data</td><td>Y</td><td>获取分页信息的数据列表</td><td>传入列表必须是一个PaginateSupportArray的实例</td></tr>
-    <tr><td>path</td><td>N</td><td>自定义分页连接的路径</td><td>如果不设置将自动从用户的请求判断分页路径</td></tr>
-    <tr><td>pageVar</td><td>N</td><td>用户标识页码的变量名称</td><td>默认是"page"</td></tr>
-    <tr><td>preLabel</td><td>N</td><td>上一页标签显示的文字</td><td>如果不设置将从i18n从获取</td></tr>
-    <tr><td>nextLabel</td><td>N</td><td>下一页标签显示的文字</td><td>如果不设置将从i18n从获取</td></tr>
+    <tr><td>data</td><td>Y</td><td>the data list which got pagination info from</td><td>the data object must be an instance of PaginateSupportArray</td></tr>
+    <tr><td>path</td><td>N</td><td>customzied url for links in the pagination</td><td>RTL will get it automaticly if it's not given.</td></tr>
+    <tr><td>pageVar</td><td>N</td><td>the variable name which identify the page info</td><td>default is "page"</td></tr>
+    <tr><td>preLabel</td><td>N</td><td>the text will be displayed as the previous page link label</td><td>got from i18n if not setted</td></tr>
+    <tr><td>nextLabel</td><td>N</td><td>the text will be displayed as the next page link label</td><td>got from i18n if not setted</td></tr>
 </table>
 
