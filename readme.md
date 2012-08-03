@@ -1,15 +1,19 @@
 There are two category tags in the package:
 
-* Tags for template
-* Tags for paginate
+* Template Tags
+* Paginate Tags
 
 # Templating Tags
 
 ## How to use
 
-add dependency in maven.
-```
-...
+add dependency in maven. currently you need to install the artifact manually
+```xml
+<dependency>
+    <groupId>me.donnior</groupId>
+    <artifactId>rtl</artifactId>
+    <version>0.1</version>
+</dependency>
 ```
 
 set the template page in web.xml, make sure the param name is `tftTempatePage`; if not, RTL will use the default template page which is <code>WEB-INF/views/layout/template.jsp</code>
