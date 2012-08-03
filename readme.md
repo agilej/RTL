@@ -8,6 +8,7 @@ There are two category tags in the package:
 ## How to use
 
 1. Add dependency in maven. currently you need to install the artifact manually
+
 ```xml
 <dependency>
     <groupId>me.donnior</groupId>
@@ -26,6 +27,7 @@ There are two category tags in the package:
 ```
 
 3. Define your template page
+
 ```html
 <!DOCTYPE html>
 <html>
@@ -48,7 +50,7 @@ There are two category tags in the package:
 <body>
     <div id="body">
         <div id="sidebar">
-                //...
+                
         </div>
         
         <div id="main">
