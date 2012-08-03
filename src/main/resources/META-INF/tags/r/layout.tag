@@ -5,17 +5,17 @@
 
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 
-<c:set var="tftTitle" value="${title}" scope="request"></c:set>
-<jsp:doBody var="tftMainBody" scope="request"></jsp:doBody>
+<c:set var="RTLTitle" value="${title}" scope="request"></c:set>
+<jsp:doBody var="RTLMainBody" scope="request"></jsp:doBody>
 <c:if test="${empty template}">
 	<% 
-	   String tftTemplate = application.getInitParameter("tftTempatePage"); 
-	   if(tftTemplate == null){
-	       tftTemplate = "/WEB-INF/views/layout/template.jsp";
+	   String RTLTemplate = application.getInitParameter("RTLTempatePage"); 
+	   if(RTLTemplate == null){
+	       RTLTemplate = "/WEB-INF/views/layout/template.jsp";
 	   }
-	   request.setAttribute("tftTemplate", tftTemplate);
+	   request.setAttribute("RTLTemplate", RTLTemplate);
 	%> 
-    <jsp:include page ="${tftTemplate}" />
+    <jsp:include page ="${RTLTemplate}" />
 </c:if>
 <c:if test="${not empty template}">
     <jsp:include page ="${template}" />

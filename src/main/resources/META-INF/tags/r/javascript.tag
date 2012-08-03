@@ -3,10 +3,10 @@
 
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 
-<c:if test="${empty tftJavascriptList}">
-    <% request.setAttribute("tftJavascriptList", new java.util.ArrayList()); %>
+<c:if test="${empty RTLJavascriptList}">
+    <% request.setAttribute("RTLJavascriptList", new java.util.ArrayList()); %>
 </c:if>
-<c:set var="tftJavascript" scope="request">
+<c:set var="RTLJavascript" scope="request">
 	<c:url value="${name}"/>
 </c:set>
-<% ((java.util.List)request.getAttribute("tftJavascriptList")).add(request.getAttribute("tftJavascript")); %>
+<% ((java.util.List)request.getAttribute("RTLJavascriptList")).add(request.getAttribute("RTLJavascript")); %>

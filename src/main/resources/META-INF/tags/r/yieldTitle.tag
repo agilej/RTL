@@ -4,4 +4,4 @@
 <%@ attribute name="prefix" required="false" type="java.lang.String" %>
 
 
-<title>${prefix}${tftTitle}</title>
+<title>${prefix}${RTLTitle}</title>
