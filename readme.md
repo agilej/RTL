@@ -88,12 +88,12 @@
 
 ## 安装及使用
 
-### 在国际化文件中添加标签库需要的i18n资源,如
+在国际化文件中添加标签库需要的i18n资源,如
 
     default.paginate.label.previous = 上一页标签文字
     default.paginate.label.next = 下一页标签文字
 
-### 在DAO中需要支持分页的方法中返回PaginateSupportArray代替常规ArrayList
+在DAO中需要支持分页的方法中返回PaginateSupportArray代替常规ArrayList
 ```java
 public List<User> listAllUsers(int page, int pageSize){
     List<User> users = // get record from database
@@ -105,9 +105,9 @@ public List<User> listAllUsers(int page, int pageSize){
     return list;
 }
 ```
-### 在JSP中使用分页组件
+在JSP中使用分页组件
 ```xml
-     <r:paginate data="${results}" />
+<r:paginate data="${results}" />
 ```
 
 ## 自定义样式
@@ -132,7 +132,7 @@ public List<User> listAllUsers(int page, int pageSize){
     <tr><td>data</td><td>Y</td><td>获取分页信息的数据列表</td><td>传入列表必须是一个PaginateSupportArray的实例</td></tr>
     <tr><td>path</td><td>N</td><td>自定义分页连接的路径</td><td>如果不设置将自动从用户的请求判断分页路径</td></tr>
     <tr><td>pageVar</td><td>N</td><td>用户标识页码的变量名称</td><td>默认是"page"</td></tr>
-    <tr><td>preLabe l</td><td>N</td><td>上一页标签显示的文字</td><td>如果不设置将从i18n从获取</td></tr>
+    <tr><td>preLabel</td><td>N</td><td>上一页标签显示的文字</td><td>如果不设置将从i18n从获取</td></tr>
     <tr><td>nextLabel</td><td>N</td><td>下一页标签显示的文字</td><td>如果不设置将从i18n从获取</td></tr>
 </table>
 
