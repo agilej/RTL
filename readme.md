@@ -70,17 +70,17 @@
 
 * yieldTitle       
     `用于模版定义中，使用此标签来为模版设置单独页面的标题`
-* yieldStylesheets
+* yieldStylesheets  
     `用于模版定义中，使用此标签来为模版设置单独页面需要的样式文件`
-* yieldJavascripts
+* yieldJavascripts  
     `用于模版定义中，使用此标签来为模版设置单独页面需要的脚本文件`
-* yieldBody
+* yieldBody  
     `用于模版定义中，使用此标签来输出各页面的内容`
-* layout
+* layout  
     `用于需要使用模版的页面，使用此标签来应用模版`
-* stylesheet
+* stylesheet  
     `用于需要使用模版的页面，使用此标签来为单独页面设置个性化需要的样式文件`
-* javascript
+* javascript  
     `用于需要使用模版的页面，使用此标签来为单独页面设置个性化需要的脚本文件`
 
 
