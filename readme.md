@@ -125,9 +125,15 @@ public List<User> listAllUsers(int page, int pageSize){
 
 ## paginate标签属性详解
 
-| 属性名 | 是否必需 | 用途 | 说明 |
-| data | Y | 获取分页信息的数据列表 | 传入列表必须是一个PaginateSupportArray的实例 |
-| path | N | 自定义分页连接的路径 | 如果不设置将自动从用户的请求判断分页路径 |
-| pageVar | N | 用户标识页码的变量名称 | 默认是"page" |
-| preLabe l | N | 上一页标签显示的文字 | 如果不设置将从i18n从获取 |
-| nextLabel | N | 下一页标签显示的文字 | 如果不设置将从i18n从获取 |
+<table>
+    <tr>
+        <th>属性名</th><th>是否必需</th><th>用途</th><th>说明</th>
+    </tr>
+    <tr><td>属性名</td><td>是否必需</td><td>用途</td><td>说明</td></tr>
+    <tr><td>data</td><td>Y</td><td>获取分页信息的数据列表</td><td>传入列表必须是一个PaginateSupportArray的实例</td></tr>
+    <tr><td>path</td><td>N</td><td>自定义分页连接的路径</td><td>如果不设置将自动从用户的请求判断分页路径</td></tr>
+    <tr><td>pageVar</td><td>N</td><td>用户标识页码的变量名称</td><td>默认是"page"</td></tr>
+    <tr><td>preLabe l</td><td>N</td><td>上一页标签显示的文字</td><td>如果不设置将从i18n从获取</td></tr>
+<tr><td>nextLabel</td><td>N</td><td>下一页标签显示的文字</td>如果不设置将从i18n从获取</td></tr>
+</table>
+
