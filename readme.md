@@ -7,7 +7,7 @@ There are two category tags in the package:
 
 ## How to use
 
-1. Add dependency in maven. currently you need to install the artifact manually
+* Add dependency in maven. currently you need to install the artifact manually
 ```xml
 <dependency>
     <groupId>me.donnior</groupId>
@@ -15,14 +15,16 @@ There are two category tags in the package:
     <version>0.1</version>
 </dependency>
 ```
-2. Set the template page in web.xml, make sure the param name is `tftTempatePage`; if not, RTL will use the default template page which is <code>WEB-INF/views/layout/template.jsp</code>
+
+* Set the template page in web.xml, make sure the param name is `tftTempatePage`; if not, RTL will use the default template page which is <code>WEB-INF/views/layout/template.jsp</code>
 ```xml
 <context-param>
     <param-name>tftTempatePage</param-name>
     <param-value>/WEB-INF/views/layout/template.jsp</param-value>
 </context-param>
 ```
-3. Define your template page
+
+* Define your template page
 ```html
 <!DOCTYPE html>
 <html>
@@ -57,7 +59,8 @@ There are two category tags in the package:
 </body>
 </html>
 ```
-4. Use the template in your every page needed to be templated. Like this:
+
+* Use the template in your every page needed to be templated. Like this:
 ```html
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
