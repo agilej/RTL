@@ -15,12 +15,5 @@ src/main/java/me/donnior/fava/FArrayList.java
 
 *.svn-base
 *.svn*
-src/.DS_Store
-
-src/main/resources/.DS_Store
-
-src/main/resources/META-INF/.DS_Store
-
+*.DS_Store
 .DS_Store
-
-showcase/.DS_Store
