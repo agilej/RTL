@@ -77,7 +77,7 @@
 			<a href="${url}" class="number">1</a>
 		</c:if>
 		<c:if test="${currentPage - 2 > 2}">
-			……
+			<span>…</span>
 		</c:if>
 		
 
@@ -113,7 +113,7 @@
 		</c:if>
 		
 		<c:if test="${currentPage + 2 < pages - 1}">
-			……
+			<span>…</span>
 		</c:if>
 		
 		<c:if test="${pages > 1 && currentPage != pages}">
