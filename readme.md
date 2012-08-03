@@ -7,7 +7,7 @@ There are two category tags in the package:
 
 ## How to use
 
-add dependency in maven. currently you need to install the artifact manually
+Add dependency in maven. currently you need to install the artifact manually
 ```xml
 <dependency>
     <groupId>me.donnior</groupId>
@@ -16,7 +16,7 @@ add dependency in maven. currently you need to install the artifact manually
 </dependency>
 ```
 
-set the template page in web.xml, make sure the param name is `tftTempatePage`; if not, RTL will use the default template page which is <code>WEB-INF/views/layout/template.jsp</code>
+Set the template page in web.xml, make sure the param name is `tftTempatePage`; if not, RTL will use the default template page which is <code>WEB-INF/views/layout/template.jsp</code>
 
 ```xml
 <context-param>
@@ -25,7 +25,7 @@ set the template page in web.xml, make sure the param name is `tftTempatePage`; 
 </context-param>
 ```
 
-## Define your template page
+Define your template page
 ```html
 <!DOCTYPE html>
 <html>
@@ -61,7 +61,7 @@ set the template page in web.xml, make sure the param name is `tftTempatePage`; 
 </html>
 ```
 
-## Use the template in your every page needed to be templated. Like this:
+Use the template in your every page needed to be templated. Like this:
 
 ```html
 <%@ page language="java" contentType="text/html; charset=UTF-8"
@@ -130,11 +130,11 @@ Use the wrapped List in jsp
 The paginate tag will generate the following html code without any specific styles, you can set styles in your css file.
 ```html
 <div class="pagination">
-    <a href="/xxx?page=2" title="Next Page" class="label pre">Previous Page</a>
-    <a href="/xxx?page=1" class="number current">1</a>  
+    <a href="/xxx?page=9" title="Next Page" class="label pre">Previous Page</a>
+    <a href="/xxx?page=10" class="number current">10</a>  
     <span>...</span>
-    <a href="/xxx?page=2" class="number">20</a>
-    <a href="/xxx?page=2" title="Next Page" class="label next">Next Page</a>
+    <a href="/xxx?page=31" class="number">31</a>
+    <a href="/xxx?page=11" title="Next Page" class="label next">Next Page</a>
 </div>
 ```
 
