@@ -4,13 +4,15 @@
 
  修改模版位置至项目实际位置，在web.xml中配置（确保参数名为"tftTempatePage"）; 如果不配置，将默认使用 <code>WEB-INF/views/layout/template.jsp</code> 作为模版
 
-    <context-param>
-        <param-name>tftTempatePage</param-name>
-        <param-value>/WEB-INF/views/layout/template.jsp</param-value>
-    </context-param>
+```xml
+<context-param>
+    <param-name>tftTempatePage</param-name>
+    <param-value>/WEB-INF/views/layout/template.jsp</param-value>
+</context-param>
+```
 
 ## 定义模版
-
+```html
     <!DOCTYPE html>
     <html>
     <head>
@@ -43,11 +45,12 @@
         </div>
     </body>
     </html>
+```
 
 ## 使用模版
 
 在单个需要使用模版的页面使用
-
+```html
     <%@ page language="java" contentType="text/html; charset=UTF-8"
         pageEncoding="UTF-8"%>
 
@@ -61,6 +64,7 @@
         <h3>page title</h3>
         <ul><li>...</li></ul>   
     </r:layout>
+```
 
 ## 各标签详解
 
