@@ -12,12 +12,12 @@
 <%-- set path to default if user do not specify it --%>
 
 <c:if test="${not empty path}" >
-	<c:set var="uri" value="${path}" ></c:set>
+	<c:set var="RTLUri" value="${path}" ></c:set>
 </c:if>
 <c:if test="${empty path}" >
 	<%
 		com.boventech.paginate.PaginateUtil util = com.boventech.paginate.PaginateUtil.getInstance();
-		request.setAttribute("uri", util.getPaginatePath(request));
+		request.setAttribute("RTLUri", util.getPaginatePath(request));
 	%>
 </c:if>
 
@@ -59,19 +59,19 @@
 
 <div class="pagination">
 	<c:if test="${total > 0 and pages != 1}">
-		<c:url var="url" value="${uri}" >
+		<c:url var="url" value="${RTLUri}" >
 		    <c:param name="${pageVarName}" value="1" />
 		</c:url>
 		
 		<c:if test="${currentPage > 1}">
-			<c:url var="url" value="${uri}" >
+			<c:url var="url" value="${RTLUri}" >
 			    <c:param name="${pageVarName}" value="${currentPage-1}" />
 			</c:url>
 			<a href="${url}" title="Previous Page" class="label pre">${preLabel}</a>
 		</c:if>
 
 		<c:if test="${currentPage != 1}">
-			<c:url var="url" value="${uri}" >
+			<c:url var="url" value="${RTLUri}" >
 			    <c:param name="${pageVarName}" value="1" />
 			</c:url>
 			<a href="${url}" class="number">1</a>
@@ -82,31 +82,31 @@
 		
 
 		<c:if test="${currentPage - 2 > 1}">
-			<c:url var="url" value="${uri}" >
+			<c:url var="url" value="${RTLUri}" >
 			    <c:param name="${pageVarName}" value="${currentPage - 2}" />
 			</c:url>
 			<a href="${url}" class="number">${currentPage - 2}</a>
 		</c:if>
 		<c:if test="${currentPage - 1 > 1}">
-			<c:url var="url" value="${uri}" >
+			<c:url var="url" value="${RTLUri}" >
 			    <c:param name="${pageVarName}" value="${currentPage - 1}" />
 			</c:url>
 			<a href="${url}" class="number">${currentPage - 1}</a>
 		</c:if>
 		
-		<c:url var="url" value="${uri}" >
+		<c:url var="url" value="${RTLUri}" >
 		    <c:param name="${pageVarName}" value="${currentPage}" />
 		</c:url>
 		<a href="${url}" class="number current">${currentPage}</a>		
 		
 		<c:if test="${currentPage + 1 < pages}">
-			<c:url var="url" value="${uri}" >
+			<c:url var="url" value="${RTLUri}" >
 			    <c:param name="${pageVarName}" value="${currentPage + 1}" />
 			</c:url>
 			<a href="${url}" class="number">${currentPage + 1}</a>
 		</c:if>
 		<c:if test="${currentPage + 2 < pages}">
-			<c:url var="url" value="${uri}" >
+			<c:url var="url" value="${RTLUri}" >
 			    <c:param name="${pageVarName}" value="${currentPage + 2}" />
 			</c:url>
 			<a href="${url}" class="number">${currentPage + 2}</a>
@@ -117,19 +117,19 @@
 		</c:if>
 		
 		<c:if test="${pages > 1 && currentPage != pages}">
-			<c:url var="url" value="${uri}" >
+			<c:url var="url" value="${RTLUri}" >
 			    <c:param name="${pageVarName}" value="${pages}" />
 			</c:url>
 			<a href="${url}" class="number">${pages}</a>		
 		</c:if>
 
 		<c:if test="${currentPage  != pages}">
-			<c:url var="url" value="${uri}" >
+			<c:url var="url" value="${RTLUri}" >
 			    <c:param name="${pageVarName}" value="${currentPage + 1}" />
 			</c:url>
 			<a href="${url}" title="Next Page" class="label next">${nextLabel}</a>
 		</c:if>
-		<c:url var="url" value="${uri}" >
+		<c:url var="url" value="${RTLUri}" >
 		    <c:param name="${pageVarName}" value="${pages}" />
 		</c:url>
 	</c:if>
