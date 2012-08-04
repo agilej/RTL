@@ -29,6 +29,9 @@ Set the template page in web.xml, make sure the param name is `tftTempatePage`; 
 Define your template page
 
 ```html
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib prefix="r" uri="R-Tags"%>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -36,13 +39,11 @@ Define your template page
 
 <r:yieldTitle prefix="Gloable Title | "></r:yieldTitle>
 
-<link rel="stylesheet" href="reset.css" type="text/css" media="screen" />
 <link rel="stylesheet" href="style.css" type="text/css" media="screen" />
 
 <r:yieldStylesheets></r:yieldStylesheets>
 
 <script type="text/javascript" src="jquery-1.7.2.min.js" ></script>
-<script type="text/javascript" src="application.js"></script>
 
 <r:yieldJavascripts />
 
