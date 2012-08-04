@@ -4,8 +4,8 @@
 <%@ taglib prefix="r" uri="R-Tags"%>
 
 <r:layout title="Welcome page">
-	<h3>This is title</h3>
+	
 
-	<div>This is the welcome page</div>
+	<div class="welcome">This is the welcome page, please click the "user list" link</div>
 	
 </r:layout>

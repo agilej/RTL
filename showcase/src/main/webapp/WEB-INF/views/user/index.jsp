@@ -4,7 +4,7 @@
 <%@ taglib prefix="r" uri="R-Tags"%>
 
 <r:layout title="Usr list">
-
+	<h2>User List</h2>
 	<table>
 		<thead>
 			<tr>

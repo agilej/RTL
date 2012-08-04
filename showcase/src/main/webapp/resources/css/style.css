@@ -3,29 +3,58 @@ body {
 	margin: auto;
 	min-height: 540px;
 	padding: 10px;
+	background-color: #9cf;
 
+	font-family: Arial;
+}
+
+
+h2 {
+	font-size: 130%;
+	color: #333;
+	border-bottom: 1px solid #ccc;
+	margin-bottom: 0.3em;
+}
+
+a{
+	text-decoration: none;
+}
+
+#body{
+	-moz-border-radius: 15px
+	-webkit-border-radius: 15px;
+	border-radius: 15px;
+	/*background-color: white;*/
 }
 
 #header h1{
 	background-color: rgba(33,33,33,0.2);
 	display: inline-block;
 	padding: 10px;
-	-moz-border-radius: 15px
-	-webkit-border-radius: 15px;
-	border-radius: 15px;
-
+	-moz-border-radius: 8px
+	-webkit-border-radius: 8px;
+	border-radius: 8px;
+	color: #eee;
 }
 
 #content{
-	background-color: rgba(33,33,33,0.2);
+	/*background-color: rgba(33,33,33,0.2);*/
+	background-color: white;
+	-moz-border-radius: 5px
+	-webkit-border-radius: 5px;
+	border-radius: 5px;	
 }
 
 
 #sidebar{
 	width: 240px;
-	height: 500px;
-	background-color: orange;
+	height: 540px;
+	background-color: #e5ecf9;
 	float: left;
+}
+
+#sidebar ul{
+	margin-top: 50px;
 }
 
 #main{
@@ -38,28 +67,48 @@ body {
 	clear: both;
 }
 
-#main table{
+table{
 	margin-top: 20px;
 	width: 100%;
+
+	border: 1px solid #C3D9FF;
+	margin-bottom: 5px;
+	margin-top: 5px;
+	table-layout: fixed;
+	word-break: break-all;
+	border-collapse: separate;
+	border-spacing: 0;	
+
 }
 
-#main table thead tr{
-	height: 2em;
-	background-color: rgba(33,33,33,0.4);
+tbody {
+	display: table-row-group;
+	vertical-align: middle;
 }
 
-#main table tbody tr{
-	height: 2em;
-}
-
-tr:nth-child(odd)    { background-color:#eee; }
-tr:nth-child(even)    { background-color:#fff; }
-#main table tbody  td{
+table tbody  td{
 	text-align: center;
 }
 
+tr {
+	display: table-row;
+	vertical-align: inherit;
+	border-color: inherit;
+	height: 2.3em;
+}
+
+tbody tr:nth-child(even) td, tbody tr.even td {
+	background: #e5ecf9;
+}
+
+thead th {
+	background: #c3d9ff;
+	height: 2em;
+}
+
+
 .pagination{
-	margin-top:20px;
+	margin-top:10px;
 	padding:10px;
 }
 
@@ -67,4 +116,25 @@ tr:nth-child(even)    { background-color:#fff; }
 	display: inline-block;
 	margin-right: 10px;
 	margin-left: 10px;
+}
+
+#profile{
+	background-color: #e5ecf9;
+}
+
+#profile p{
+	margin: 10px 0;
+	font-size: 1.4em;
+	padding:10px;
+}
+#profile span{
+	display: inline-block;
+	font-weight: 200%;
+	font-size: 1em; 
+	color: #555;
+}
+
+#profile span.label{
+	width: 100px;
+	color: #999;
 }

@@ -4,14 +4,18 @@
 <%@ taglib prefix="r" uri="R-Tags"%>
 
 <r:layout title="User profile">
+	
+	<h2>User Profile</h2>
 
-
-	<div>
+	<div id="profile">
 		<p>
-			<span>Login</span> <span>${user.login}</span>
+			<span class="label">Login</span> <span>${user.id}</span>
 		</p>
 		<p>
-			<span>email</span> <span>${user.email}</span>
+			<span class="label">Login</span> <span>${user.login}</span>
+		</p>
+		<p>
+			<span class="label">email</span> <span>${user.email}</span>
 		</p>
 	</div>
 

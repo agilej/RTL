@@ -15,6 +15,7 @@
 <r:yieldJavascripts />
 </head>
 <body>
+  <div id="body">  
     <div id="header"><h1>R-Tag Showcase app</h1></div>
     <div id="content">
         <div id="sidebar">
@@ -29,5 +30,6 @@
 
         <div id="clear"></div>
     </div>
+  </div>  
 </body>
 </html>
