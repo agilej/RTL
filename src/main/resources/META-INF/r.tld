@@ -9,7 +9,7 @@
   <display-name>RTL core</display-name>
   <tlib-version>1.0</tlib-version>
   <short-name>r</short-name>
-  <uri>R-Tags</uri>
+  <uri>r-tag</uri>
 
   <tag-file>
     <name>yieldTitle</name>

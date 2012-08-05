@@ -30,13 +30,12 @@ Define your template page
 
 ```html
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-<%@ taglib prefix="r" uri="R-Tags"%>
+<%@ taglib prefix="r" uri="r-tag"%>
 
 <!DOCTYPE html>
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"></meta>
-
+<meta charset="utf-8" />
 <r:yieldTitle prefix="Gloable Title | "></r:yieldTitle>
 
 <link rel="stylesheet" href="style.css" type="text/css" media="screen" />
@@ -70,7 +69,7 @@ Use the template in your every page needed to be templated. Like this:
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 
-<%@ taglib prefix="r" tagdir="R-Tags"%>
+<%@ taglib prefix="r" tagdir="r-tag"%>
 
 <r:stylesheet name="/resources/styles/input.css"></r:javascript>
 
