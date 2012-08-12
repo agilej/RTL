@@ -5,7 +5,7 @@ import java.util.List;
 
 public class HtmlTableRow {
 	
-	private int row;
+	private int row;  //0 based
 	private List<HtmlTableCell> cells;
 
 	public HtmlTableRow(int row){
@@ -24,7 +24,9 @@ public class HtmlTableRow {
 
 	public String toHtml() {
 		StringBuilder sb = new StringBuilder();
-		sb.append("<tr>");
+		sb.append("<tr");
+		sb.append(this.odd() ? " class=\"odd\"" : "class=\"even\"");
+		sb.append(">");
 		for(HtmlTableCell cell : this.cells){
 			sb.append(cell.toHtml());
 		}
@@ -32,4 +34,11 @@ public class HtmlTableRow {
 		return sb.toString();
 	}
 	
+	private boolean odd(){
+		return (row + 1) % 2 != 0;
+	}
+	
+	private boolean even(){
+		return !this.odd();
+	}
 }
