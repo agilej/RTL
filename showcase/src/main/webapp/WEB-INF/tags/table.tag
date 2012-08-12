@@ -1,43 +1,29 @@
+<%@ tag import="me.donnior.rtl.html.HtmlTable"%>
+<%@ tag import="java.util.Map"%>
 <%@ tag language="java" pageEncoding="UTF-8"%>
+<%@ tag dynamic-attributes="dynamicAttributes"  %>
 <%@ attribute name="data" required="true" type="java.util.List" rtexprvalue="true" %>
 <%@ attribute name="var"  %>
 <%@ attribute name="varStatus"  %>
 
-
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
 
-<table>
-	
-	<%
-	for(int i=0; i<data.size(); i++) {
-		request.setAttribute(var, data.get(i));
-		request.setAttribute(varStatus, i);
-		if(i==0){ 
-		%>
-			<jsp:doBody var="header" scope="request"></jsp:doBody>
-			<% out.print("<thead><tr>");%>
-
-			<% 
-			java.util.List headers = (java.util.List)request.getAttribute("RTLTableHeaderList");
-			for(int j=0; j<headers.size(); j++){
-				out.print("<th>" + headers.get(j) + "</th>");
-			}
-			
-			%>
-			<% out.print("</tr></thead>");%>
-			<% out.print("<tbody><tr>");%>
-			<% out.print(request.getAttribute("header"));%>	
-			<% out.print("</tr>");%>
-		<% 
-		} else { 
-		%>
-			<tr><jsp:doBody /> </tr>
-		<% 
-		} 
-		
-	} 
-	%>
-	</tbody>
-
-</table>
+<%
+HtmlTable table = new HtmlTable(data.size());
+table.setDynamicAttributes((Map)jspContext.getAttribute("dynamicAttributes"));
+request.setAttribute("RTLTable", table); 
+/* jspContext.setAttribute("RTLTable", table); */
+for(int i=0; i<data.size(); i++) {
+	request.setAttribute(var, data.get(i));
+	request.setAttribute(varStatus, i);
+	request.setAttribute("RTLTableCurrentRow", i);
+%>  
+  <jsp:doBody></jsp:doBody>
+<%  
+    if(i == 0){
+     table.freezonHeadCell(); 
+    }
+}
+out.print(table.toHtml());
+%>

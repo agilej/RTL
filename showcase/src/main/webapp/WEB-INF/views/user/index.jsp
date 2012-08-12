@@ -6,14 +6,14 @@
 <r:layout title="Usr list">
   <h2>User List</h2>
 
-  <d:table2 data="${users}" var="user" varStatus="status" id="table1" class="cls_a">
-    <d:col2 header="序号" headerKey="HeaderKey">${status+1}</d:col2>
-    <d:col2 headerKey="user.login.label" cssClass="name">
+  <d:table data="${users}" var="user" varStatus="status" id="table1" class="cls_a">
+    <d:col >${status+1}</d:col>
+    <d:col headerKey="user.login.label" cssClass="name">
       <d:a href="/user/${user.id}">${user.login}</d:a>
-    </d:col2>
-    <d:col2 header="邮箱">${user.email}</d:col2>
-    <d:col2 header="操作"></d:col2>
-  </d:table2>
+    </d:col>
+    <d:col header="Mail">${user.email}</d:col>
+    <d:col header="Operation"></d:col>
+  </d:table>
 
   <r:paginate data="${users}"></r:paginate>
 </r:layout>

@@ -1,13 +1,27 @@
-<%@ tag language="java" pageEncoding="UTF-8"%>
-<%@ attribute name="header" required="true" type="java.lang.String" rtexprvalue="true" %>
+<%@tag import="me.donnior.rtl.html.HtmlTable"%>
+<%@ tag language="java" pageEncoding="UTF-8" dynamic-attributes="htmlAttrs" %>
+<%@ attribute name="header" required="false" type="java.lang.String" rtexprvalue="true" %>
+<%@ attribute name="headerKey" required="false" type="java.lang.String" rtexprvalue="true" %>
+<%@ attribute name="cssClass" required="false" type="java.lang.String" rtexprvalue="true" %>
 
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
 
+<jsp:doBody var="RTLTableCellContent" scope="page"/>
 
-<c:if test="${empty RTLTableHeaderList}">
-    <% request.setAttribute("RTLTableHeaderList", new java.util.ArrayList()); %>
-</c:if>
-<% ((java.util.List)request.getAttribute("RTLTableHeaderList")).add(header); %>
+<% if(headerKey != null){ %>
+  <fmt:message key="${headerKey}" var="RTLTableHeadLable" scope="page"></fmt:message>
+<% } %>
 
-<td><jsp:doBody /> </td>
+<%
+  HtmlTable table = (HtmlTable)request.getAttribute("RTLTable");
+  int row = (Integer)request.getAttribute("RTLTableCurrentRow");
+  table.addBodyCellAtRow(row, (String)jspContext.getAttribute("RTLTableCellContent"));
+  
+  if(headerKey != null){
+  	table.addHeadCell((String)jspContext.getAttribute("RTLTableHeadLable"));  
+  } else {
+  	table.addHeadCell(header); 
+  }
+  
+  jspContext.removeAttribute("RTLTableHeadLable");
+%>  
