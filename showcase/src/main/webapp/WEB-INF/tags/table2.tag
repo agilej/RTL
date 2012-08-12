@@ -1,5 +1,7 @@
 <%@ tag import="me.donnior.rtl.html.HtmlTable"%>
+<%@ tag import="java.util.Map"%>
 <%@ tag language="java" pageEncoding="UTF-8"%>
+<%@ tag dynamic-attributes="dynamicAttributes"  %>
 <%@ attribute name="data" required="true" type="java.util.List" rtexprvalue="true" %>
 <%@ attribute name="var"  %>
 <%@ attribute name="varStatus"  %>
@@ -9,6 +11,7 @@
 
 <%
 HtmlTable table = new HtmlTable(data.size());
+table.setDynamicAttributes((Map)jspContext.getAttribute("dynamicAttributes"));
 request.setAttribute("RTLTable", table); 
 /* jspContext.setAttribute("RTLTable", table); */
 for(int i=0; i<data.size(); i++) {
