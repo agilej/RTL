@@ -21,7 +21,7 @@ public class UsersController{
 	@RequestMapping(value="/users")
     public ModelAndView index(@RequestParam(value="page",required=false, defaultValue="1") int page){
 	   ModelAndView mav = new ModelAndView("user/index");
-	   List<User> users = new ArrayList();
+	   List<User> users = new ArrayList<User>();
 	   for(int i=0; i<DEFAUTL_PAGE_SIZE; i++){
 		   int id = page*DEFAUTL_PAGE_SIZE +i;
 		   users.add(new User(id, "use login"+id, "user"+id+"@example.com"));
