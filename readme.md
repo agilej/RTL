@@ -159,7 +159,7 @@ The paginate tag will generate the following html code without any specific styl
 
 Both tags support dynamic attributes like css, id ...
 
-## <r:a>
+## &alt;r:a&gt;
 
 Use `a` tag to create html link. It's a replacement of JSTL's `<c:url>`
 
@@ -168,7 +168,7 @@ Use `a` tag to create html link. It's a replacement of JSTL's `<c:url>`
 <r:a class="link_a" href="/user/${user.id}">${user.login}</r:a>
 ```
 
-## <r:table> & <r:col>
+## &alt;r:table&gt; & &alt;r:col&gt;
 
 Use `<r:table>` and `<r:col>` to define a data table.
 
