@@ -3,7 +3,7 @@
 <%@ taglib prefix="r" uri="r-tag"%>
 <%@ taglib prefix="d" tagdir="/WEB-INF/tags"%>
 
-<r:layout title="Usr list">
+<r:layout title="User List" >
   <h2>User List</h2>
 
   <r:table data="${users}" var="user" varStatus="status" id="table1" class="cls_a">
