@@ -12,7 +12,9 @@
       <r:a class="linka" href="/user/${user.id}">${user.login}</r:a>
     </r:col>
     <r:col header="Mail">${user.email}</r:col>
-    <r:col header="Operation"></r:col>
+    <r:col header="Operation">
+      <r:a class="linka" href="#">Edit</r:a>
+    </r:col>
   </r:table>
 
   <r:paginate data="${users}"></r:paginate>
