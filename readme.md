@@ -1,7 +1,8 @@
-There are two category tags in the package:
+There are three category tags in the package:
 
 * Template Tags
 * Paginate Tags
+* Html Tags
 
 # Templating Tags
 
@@ -151,3 +152,34 @@ The paginate tag will generate the following html code without any specific styl
     <tr><td>nextLabel</td><td>N</td><td>the text will be displayed as the next page link label</td><td>got from i18n if not setted</td></tr>
 </table>
 
+# Html Tags
+
+* a
+* table
+
+Both tags support dynamic attributes like css, id ...
+
+## <r:a>
+
+Use `a` tag to create html link. It's a replacement of JSTL's `<c:url>`
+
+### Example
+```html
+<r:a class="link_a" href="/user/${user.id}">${user.login}</r:a>
+```
+
+## <r:table> & <r:col>
+
+Use `<r:table>` and `<r:col>` to define a data table.
+
+### Example
+
+```html
+<r:table data="${users}" var="user" id="tbl_1" class="table">
+  <r:col headerKey="user.login.label" >
+    <r:a class="link_a" href="/user/${user.id}">${user.login}</r:a>
+  </r:col>
+  <r:col header="Mail">${user.email}</r:col>
+  <r:col header="Operation"></r:col>
+</r:table>
+```
