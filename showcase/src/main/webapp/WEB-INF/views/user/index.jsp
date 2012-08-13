@@ -6,14 +6,14 @@
 <r:layout title="Usr list">
   <h2>User List</h2>
 
-  <d:table data="${users}" var="user" varStatus="status" id="table1" class="cls_a">
-    <d:col >${status+1}</d:col>
-    <d:col headerKey="user.login.label" >
-      <d:a class="linka" href="/user/${user.id}">${user.login}</d:a>
-    </d:col>
-    <d:col header="Mail">${user.email}</d:col>
-    <d:col header="Operation"></d:col>
-  </d:table>
+  <r:table data="${users}" var="user" varStatus="status" id="table1" class="cls_a">
+    <r:col >${status+1}</r:col>
+    <r:col headerKey="user.login.label" >
+      <r:a class="linka" href="/user/${user.id}">${user.login}</r:a>
+    </r:col>
+    <r:col header="Mail">${user.email}</r:col>
+    <r:col header="Operation"></r:col>
+  </r:table>
 
   <r:paginate data="${users}"></r:paginate>
 </r:layout>

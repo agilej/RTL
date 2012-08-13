@@ -54,7 +54,7 @@
     <path>/META-INF/tags/r/paginate.tag</path>
   </tag-file>  
 
-<!--   <tag-file>
+  <tag-file>
     <name>table</name>
     <path>/META-INF/tags/r/table.tag</path>
   </tag-file>  
@@ -63,5 +63,10 @@
     <name>col</name>
     <path>/META-INF/tags/r/col.tag</path>
   </tag-file>  
- -->
+
+  <tag-file>
+    <name>a</name>
+    <path>/META-INF/tags/r/a.tag</path>
+  </tag-file>  
+
 </taglib>
