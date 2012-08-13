@@ -8,8 +8,8 @@
 
   <d:table data="${users}" var="user" varStatus="status" id="table1" class="cls_a">
     <d:col >${status+1}</d:col>
-    <d:col headerKey="user.login.label" cssClass="name">
-      <d:a href="/user/${user.id}">${user.login}</d:a>
+    <d:col headerKey="user.login.label" >
+      <d:a class="linka" href="/user/${user.id}">${user.login}</d:a>
     </d:col>
     <d:col header="Mail">${user.email}</d:col>
     <d:col header="Operation"></d:col>

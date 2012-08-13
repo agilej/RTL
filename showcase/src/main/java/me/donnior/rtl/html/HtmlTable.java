@@ -1,20 +1,13 @@
 package me.donnior.rtl.html;
 
 import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.Iterator;
 import java.util.List;
-import java.util.Map;
-import java.util.Map.Entry;
 
-import com.google.common.base.Strings;
-
-public class HtmlTable implements DynamicAttributeSupport{
+public class HtmlTable extends HtmlElement{
 	
 	private List<HtmlTableHeadCell> headCells;
 	private List<HtmlTableRow> rows;
 	private boolean tableHeadCellFreezoned;
-	private Map<String, String> dynamicAttributes;
 	
 	public HtmlTable(int row){
 		this.headCells = new ArrayList<HtmlTableHeadCell>();
@@ -45,9 +38,10 @@ public class HtmlTable implements DynamicAttributeSupport{
 		row.addCell(new HtmlTableCell(content));
 	}
 
-	public String toHtml() {
+
+	@Override
+	String tagContent() {
 		StringBuilder sb = new StringBuilder();
-		sb.append(this.getStartTag());
 		sb.append("<thead><tr>");
 		for(HtmlTableHeadCell cell : this.headCells){
 			sb.append(cell.toHtml());
@@ -58,33 +52,19 @@ public class HtmlTable implements DynamicAttributeSupport{
 			sb.append(row.toHtml());
 		}
 		sb.append("</tbody>");
-		sb.append("</table>");		
 		return sb.toString();
 	}
-	
+
+
 	@Override
-	public void setDynamicAttributes(Map<String, String> dynamicAttributes) {
-		if(dynamicAttributes == null){
-			dynamicAttributes = new HashMap<String, String>();
-		}
-		this.dynamicAttributes = dynamicAttributes;
+	public String writeRequiredAttributes() {
+		return "";
 	}
-	
+
+
 	@Override
-	public Map<String, String> getDynamicAttributes() {
-		return this.dynamicAttributes;
-	}
-	
-	private String getStartTag(){
-		StringBuilder sb = new StringBuilder();
-		sb.append("<table");
-	 	Iterator<Map.Entry<String, String>> entry = this.dynamicAttributes.entrySet().iterator();
-	 	while(entry.hasNext()){
-	 		Entry<String, String> e = entry.next();
-	 		sb.append(" "+e.getKey()+"=\""+Strings.nullToEmpty(e.getValue())+"\"");
-	 	}
-	 	sb.append(">");
-		return sb.toString();
+	public String name() {
+		return "table";
 	}
 	
 }
