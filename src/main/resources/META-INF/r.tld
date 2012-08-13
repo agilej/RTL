@@ -5,9 +5,9 @@
     xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-jsptaglibrary_2_1.xsd"
     version="2.1">
     
-  <description>RTL 1.0 core library</description>
+  <description>RTL 0.1 core library</description>
   <display-name>RTL core</display-name>
-  <tlib-version>1.0</tlib-version>
+  <tlib-version>0.1</tlib-version>
   <short-name>r</short-name>
   <uri>r-tag</uri>
 
