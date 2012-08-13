@@ -16,7 +16,7 @@
 </c:if>
 <c:if test="${empty path}" >
 	<%
-		com.boventech.paginate.PaginateUtil util = com.boventech.paginate.PaginateUtil.getInstance();
+		me.donnior.rtl.paginate.PaginateUtil util = me.donnior.rtl.paginate.PaginateUtil.getInstance();
 		request.setAttribute("RTLUri", util.getPaginatePath(request));
 	%>
 </c:if>
@@ -44,7 +44,7 @@
 <%-- set variables that needed for calculating pagings --%>
 
 <%
-	com.boventech.paginate.PaginateSupport array = (com.boventech.paginate.PaginateSupport)data;
+	me.donnior.rtl.paginate.PaginateSupport array = (me.donnior.rtl.paginate.PaginateSupport)data;
 	int total = array.getTotal();
 	request.setAttribute("total", total);
 
