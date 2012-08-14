@@ -4,9 +4,7 @@ There are three category tags in the package:
 * Paginate Tags
 * Html Tags
 
-# Templating Tags
-
-## How to use
+# Installation
 
 Add dependency in maven. currently you need to install the artifact manually
 
@@ -17,6 +15,10 @@ Add dependency in maven. currently you need to install the artifact manually
     <version>0.1</version>
 </dependency>
 ```
+
+# Templating Tags
+
+## How to use
 
 Set the template page in web.xml, make sure the param name is `RTLTempatePage`; if not, RTL will use the default template page which is <code>WEB-INF/views/layout/template.jsp</code>
 
