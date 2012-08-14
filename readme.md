@@ -18,11 +18,11 @@ Add dependency in maven. currently you need to install the artifact manually
 </dependency>
 ```
 
-Set the template page in web.xml, make sure the param name is `tftTempatePage`; if not, RTL will use the default template page which is <code>WEB-INF/views/layout/template.jsp</code>
+Set the template page in web.xml, make sure the param name is `RTLTempatePage`; if not, RTL will use the default template page which is <code>WEB-INF/views/layout/template.jsp</code>
 
 ```xml
 <context-param>
-    <param-name>tftTempatePage</param-name>
+    <param-name>RTLTempatePage</param-name>
     <param-value>/WEB-INF/views/layout/template.jsp</param-value>
 </context-param>
 ```
