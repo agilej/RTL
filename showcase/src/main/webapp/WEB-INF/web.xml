@@ -58,7 +58,7 @@
 	</welcome-file-list>
 
 	<context-param>
-		<param-name>tftTempatePage</param-name>
+		<param-name>RTLTempatePage</param-name>
 		<param-value>/WEB-INF/views/layout/template.jsp</param-value>
 	</context-param>
 
