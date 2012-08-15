@@ -30,7 +30,7 @@ class PerformanceInterceptor extends HandlerInterceptorAdapter{
     
     final Logger logger = LoggerFactory.getLogger(PerformanceInterceptor.class);
     
-    boolean usePerformance = true;
+    private boolean usePerformance = true;
 
     static final String HANDLER_START_AT = "HANDLER_START_AT";
     static final String HANDLER_ACTION_END_AT = "HANDLER_ACTION_END_AT";
@@ -75,6 +75,8 @@ class PerformanceInterceptor extends HandlerInterceptorAdapter{
         return usePerformance && !(handler instanceof ResourceHttpRequestHandler);
     }            
     
-    
+    public void setUsePerformance(boolean usePerformance) {
+		this.usePerformance = usePerformance;
+	}
             
 }
