@@ -172,6 +172,8 @@ Use `a` tag to create html link. It's a replacement of JSTL's `<c:url>`
 
 ## &lt;r:table&gt; & &lt;r:col&gt;
 
+RTL's `table` tag is a very simple solution for rendering data table. If you want more powerful solution, the [Display Tag](http://www.displaytag.org/) is a recommendation.
+
 Use `<r:table>` and `<r:col>` to define a data table.
 
 ### Example
