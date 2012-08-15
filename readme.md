@@ -6,7 +6,12 @@ There are three category tags in the package:
 
 # Installation
 
-Add dependency in maven. currently you need to install the artifact manually
+Currently you need to install the artifact manually
+
+1. `git clone git://github.com/donnior/RTL.git`
+2. `mvn install`
+
+Add dependency in maven to use it.
 
 ```xml
 <dependency>
