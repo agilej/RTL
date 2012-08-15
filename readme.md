@@ -192,3 +192,9 @@ Use `<r:table>` and `<r:col>` to define a data table.
   <r:col header="Operation"></r:col>
 </r:table>
 ```
+
+## License
+
+RTL is released under the MIT license:
+
+* www.opensource.org/licenses/MIT
