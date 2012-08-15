@@ -20,6 +20,13 @@ public class PaginateSupportArray<E> extends ArrayList<E> implements PaginateSup
 		super(result);
 	}
 
+	public PaginateSupportArray(List<E> result, int page, int pageSize, int total) {
+		this(result);
+		this.page = page;
+		this.pageSize = pageSize;
+		this.total = total;
+	}
+
 	public void setTotal(int total) {
 		this.total = total;
 	}
