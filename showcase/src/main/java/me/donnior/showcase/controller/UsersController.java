@@ -27,7 +27,7 @@ public class UsersController{
 		   users.add(new User(id, "use login"+id, "user"+id+"@example.com"));
 	   }
 	   PaginateSupportArray<User> result = new PaginateSupportArray<User>(users);
-	   result.setTotal(95);
+	   result.setTotal(9500);
 	   result.setPageSize(DEFAUTL_PAGE_SIZE);
 	   result.setPage(page);
 	   mav.addObject("users", result);

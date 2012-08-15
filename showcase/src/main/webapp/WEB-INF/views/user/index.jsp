@@ -1,7 +1,6 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+'<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="r" uri="r-tag"%>
-<%@ taglib prefix="d" tagdir="/WEB-INF/tags"%>
 
 <r:layout title="User List" >
   <h2>User List</h2>
@@ -16,6 +15,24 @@
       <r:a class="linka" href="#">Edit</r:a>
     </r:col>
   </r:table>
+  
+<!--   <table>
+  	<thead>
+      <tr>
+        <th></th><th>Login</th><th>Mail</th><th>Operation</th>
+      </tr>
+  	</thead>
+    <tbody>
+      <c:forEach var="user" items="${users}" varStatus="status">
+      <tr>
+        <td>${status.index + 1}</td>
+        <td><r:a class="linka" href="/user/${user.id}">${user.login}</r:a></td>
+        <td>${user.email}</td>
+        <td><r:a class="linka" href="#">Edit</r:a></td>
+      </tr>
+      </c:forEach>
+    </tbody>
+  </table> -->
 
   <r:paginate data="${users}"></r:paginate>
 </r:layout>

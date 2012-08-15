@@ -16,6 +16,11 @@
 	<mvc:view-controller path="/" view-name="welcome" />
 	
 	<mvc:resources mapping="/resources/**" location="/resources/" />
+	
+	<mvc:interceptors>
+		<bean class="me.donnior.showcase.interceptor.PerformanceInterceptor" />
+	</mvc:interceptors>
+	
 
 	<bean id="messageSource"
 		class="org.springframework.context.support.ReloadableResourceBundleMessageSource">

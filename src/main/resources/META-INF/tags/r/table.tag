@@ -22,7 +22,7 @@ for(int i=0; i<data.size(); i++) {
   <jsp:doBody></jsp:doBody>
 <%  
     if(i == 0){
-     table.freezonHeadCell(); 
+     table.freezeHeadCell(); 
     }
 }
 out.print(table.toHtml());

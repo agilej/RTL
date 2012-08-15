@@ -7,7 +7,7 @@ public class HtmlTable extends HtmlElement{
 	
 	private List<HtmlTableHeadCell> headCells;
 	private List<HtmlTableRow> rows;
-	private boolean tableHeadCellFreezoned;
+	private boolean tableHeadCellFrozen;
 	
 	public HtmlTable(int row){
 		this.headCells = new ArrayList<HtmlTableHeadCell>();
@@ -18,8 +18,12 @@ public class HtmlTable extends HtmlElement{
 	}
 	
 	
-	public void freezonHeadCell(){
-		this.tableHeadCellFreezoned = true;
+	public void freezeHeadCell(){
+		this.tableHeadCellFrozen = true;
+	}
+
+	public boolean isHeadCellFrozen(){
+		return this.tableHeadCellFrozen;
 	}
 	
 	public void addHeadCell(String value) {
@@ -27,7 +31,7 @@ public class HtmlTable extends HtmlElement{
 	}
 
 	public void addHeadCell(HtmlTableHeadCell htmlTableHeadCell) {
-		if(tableHeadCellFreezoned){
+		if(tableHeadCellFrozen){
 			return;
 		}
 		this.headCells.add(htmlTableHeadCell);
