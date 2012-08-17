@@ -11,12 +11,21 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
 
 <%
+<<<<<<< HEAD
 if(var == null){
 	var = "var";
 }
 if(varStatus == null){
 	varStatus = "status";
 }
+=======
+if(varStatus == null){
+	varStatus = "varStatus";
+}
+if(var == null){
+	var = "var";
+}
+>>>>>>> fixed NPE bug.
 HtmlTable table = new HtmlTable(data.size());
 table.setDynamicAttributes((Map)jspContext.getAttribute("dynamicAttributes"));
 request.setAttribute("RTLTable", table); 
