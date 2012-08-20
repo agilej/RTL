@@ -1,4 +1,4 @@
-'<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="r" uri="r-tag"%>
 
@@ -6,7 +6,7 @@
   <h2>User List</h2>
 
   <r:table data="${users}" var="user" varStatus="status" id="table1" class="cls_a">
-    <r:col >${status+1}</r:col>
+    <r:col >${status.count}</r:col>
     <r:col headerKey="user.login.label" >
       <r:a class="linka" href="/user/${user.id}">${user.login}</r:a>
     </r:col>
