@@ -15,5 +15,13 @@ public class LoopStatus {
 	public int getCount(){
 		return this.index + 1;
 	}
+
+	public boolean isOdd(){
+		return !isEven();
+	}
+
+	public boolean isEven(){
+		return (getCount()&1)==0;
+	}
 	
 }
