@@ -1,18 +1,28 @@
 package me.donnior.rtl.html;
 
-public class HtmlTableCell {
+import com.google.common.base.Strings;
 
-	private String content;
+public class HtmlTableCell extends HtmlElement{
+
+	protected String content;
 
 	public HtmlTableCell(String content) {
 		this.content = (content != null ? content : "");
 	}
 
-	public String toHtml() {
-		return "<td>" +content + "</td>";
+
+	@Override
+	String tagContent() {
+		return Strings.nullToEmpty(content);
 	}
 
-	public String getContent() {
-		return content;
+	@Override
+	public String writeRequiredAttributes() {
+		return "";
+	}
+
+	@Override
+	public String name() {
+		return "td";
 	}
 }

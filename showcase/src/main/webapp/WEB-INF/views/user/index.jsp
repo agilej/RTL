@@ -7,7 +7,7 @@
 
   <r:table data="${users}" var="user" varStatus="status" id="table1" class="cls_a">
     <r:col >${status.count}</r:col>
-    <r:col headerKey="user.login.label" >
+    <r:col id="uid" headerKey="user.login.label" >
       <r:a class="linka" href="/user/${user.id}">${user.login}</r:a>
     </r:col>
     <r:col header="Mail">${user.email}</r:col>

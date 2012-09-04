@@ -1,8 +1,10 @@
-<%@tag import="me.donnior.rtl.html.HtmlTable"%>
-<%@ tag language="java" pageEncoding="UTF-8" dynamic-attributes="htmlAttrs" %>
+<%@ tag import="me.donnior.rtl.html.HtmlTable"%>
+<%@ tag import="me.donnior.rtl.html.HtmlTableHeadCell"%>
+<%@ tag import="java.util.Map"%>
+<%@ tag language="java" pageEncoding="UTF-8" %>
 <%@ attribute name="header" required="false" type="java.lang.String" rtexprvalue="true" %>
 <%@ attribute name="headerKey" required="false" type="java.lang.String" rtexprvalue="true" %>
-<%@ attribute name="cssClass" required="false" type="java.lang.String" rtexprvalue="true" %>
+<%@ tag dynamic-attributes="dynamicAttributes"  %>
 
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
 
@@ -20,9 +22,13 @@ if(!table.isHeadCellFrozen()){
 %>
 <fmt:message key="${headerKey}" var="RTLTableHeadLable" scope="page"></fmt:message>
 <%
-  	table.addHeadCell((String)jspContext.getAttribute("RTLTableHeadLable"));  
+	HtmlTableHeadCell headCell = new HtmlTableHeadCell((String)jspContext.getAttribute("RTLTableHeadLable"));
+	headCell.setDynamicAttributes((Map)jspContext.getAttribute("dynamicAttributes"));	
+  	table.addHeadCell(headCell);  
   } else {
-  	table.addHeadCell(header); 
+  	HtmlTableHeadCell headCell = new HtmlTableHeadCell(header);
+  	headCell.setDynamicAttributes((Map)jspContext.getAttribute("dynamicAttributes"));
+  	table.addHeadCell(headCell); 
   }
 }  
   jspContext.removeAttribute("RTLTableHeadLable");
