@@ -1,3 +1,4 @@
+<%@ tag import="me.donnior.rtl.template.TemplateResolver"%>
 <%@ tag language="java" pageEncoding="UTF-8"%>
 
 <%@ attribute name="title" required="false" type="java.lang.String" %>
@@ -17,7 +18,16 @@
 <jsp:doBody var="RTLMainBody" scope="request"></jsp:doBody>
 <c:if test="${empty template}">
 	<% 
-	   String RTLTemplate = application.getInitParameter("RTLTempatePage"); 
+	   String RTLTemplate = application.getInitParameter("RTLTempatePage");
+	   String templateResolverClass = application.getInitParameter("RTLTemplateResolverClass");
+       if(templateResolverClass != null) {
+         Object obj = Class.forName(templateResolverClass).newInstance();
+         if(obj instanceof TemplateResolver) {
+           RTLTemplate = ((TemplateResolver)obj).resolveTemplateName(request);  
+         } else {
+           throw new RuntimeException("The class " + templateResolverClass + " is not a subclass of TemplateResolver"); 
+         }
+       }
 	   if(RTLTemplate == null){
 	       RTLTemplate = "/WEB-INF/views/layout/template.jsp";
 	   }
