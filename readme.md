@@ -17,7 +17,7 @@ Add dependency in maven to use it.
 <dependency>
     <groupId>me.donnior</groupId>
     <artifactId>rtl</artifactId>
-    <version>0.1</version>
+    <version>0.3</version>
 </dependency>
 ```
 
@@ -25,12 +25,21 @@ Add dependency in maven to use it.
 
 ## How to use
 
-Set the template page in web.xml, make sure the param name is `RTLTempatePage`; if not, RTL will use the default template page which is <code>WEB-INF/views/layout/template.jsp</code>
+Set the template page in web.xml, make sure the param name is `RTLTempatePage`; if not, RTL will use the default template page which is <code>WEB-INF/views/layout/template.jsp</code>; for some complex scenes, you can use specify a <code>RTLTemplateResolverClass</code> class which implemented <code>TemplateResolver</code>in web.xml.
+
 
 ```xml
 <context-param>
     <param-name>RTLTempatePage</param-name>
     <param-value>/WEB-INF/views/layout/template.jsp</param-value>
+</context-param>
+```
+or 
+
+```xml
+<context-param>
+    <param-name>RTLTemplateResolverClass</param-name>
+    <param-value>com.your.CustomizedTemplateResolver</param-value>
 </context-param>
 ```
 
@@ -184,7 +193,7 @@ Use `<r:table>` and `<r:col>` to define a data table.
 ### Example
 
 ```html
-<r:table data="${users}" var="user" id="tbl_1" class="table">
+<r:table data="${users}" var="user" id="tbl_1" class="table" varStatus="loop">
   <r:col headerKey="user.login.label" >
     <r:a class="link_a" href="/user/${user.id}">${user.login}</r:a>
   </r:col>
@@ -192,6 +201,8 @@ Use `<r:table>` and `<r:col>` to define a data table.
   <r:col header="Operation"></r:col>
 </r:table>
 ```
+
+Both `table` and `col` tag support dynamic attribute, you can customize their styles or whatever you like.
 
 ## License
 
