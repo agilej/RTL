@@ -1,4 +1,5 @@
 <%@ tag language="java" pageEncoding="UTF-8"%>
+<%@ tag trimDirectiveWhitespaces="true" %>
 
 <%@ attribute name="pageVar" required="false" type="java.lang.String" %>
 <%@ attribute name="path" required="false" type="java.lang.String" %>

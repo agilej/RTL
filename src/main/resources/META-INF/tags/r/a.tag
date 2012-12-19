@@ -1,6 +1,7 @@
 <%@ tag import="me.donnior.rtl.html.HtmlAnchor"%>
 <%@ tag import="java.util.Map"%>
 <%@ tag language="java" pageEncoding="UTF-8"%>
+<%@ tag trimDirectiveWhitespaces="true" %>
 <%@ tag dynamic-attributes="dynamicAttributes"  %>
 <%@ attribute name="href" required="true" type="java.lang.String" rtexprvalue="true" %>
 

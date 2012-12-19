@@ -2,6 +2,7 @@
 <%@ tag import="me.donnior.rtl.html.HtmlTableHeadCell"%>
 <%@ tag import="java.util.Map"%>
 <%@ tag language="java" pageEncoding="UTF-8" %>
+<%@ tag trimDirectiveWhitespaces="true" %>
 <%@ attribute name="header" required="false" type="java.lang.String" rtexprvalue="true" %>
 <%@ attribute name="headerKey" required="false" type="java.lang.String" rtexprvalue="true" %>
 <%@ tag dynamic-attributes="dynamicAttributes"  %>
@@ -32,4 +33,4 @@ if(!table.isHeadCellFrozen()){
   }
 }  
   jspContext.removeAttribute("RTLTableHeadLable");
-%>  
+%>

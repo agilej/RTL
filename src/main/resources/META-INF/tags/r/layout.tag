@@ -1,5 +1,6 @@
 <%@ tag import="me.donnior.rtl.template.TemplateResolver"%>
 <%@ tag language="java" pageEncoding="UTF-8"%>
+<%@ tag trimDirectiveWhitespaces="true" %>
 
 <%@ attribute name="title" required="false" type="java.lang.String" %>
 <%@ attribute name="titleKey" required="false" type="java.lang.String" %>
@@ -38,4 +39,3 @@
 <c:if test="${not empty template}">
     <jsp:include page ="${template}" />
 </c:if>
-

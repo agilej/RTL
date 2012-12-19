@@ -2,6 +2,7 @@
 <%@ tag import="me.donnior.rtl.html.LoopStatus"%>
 <%@ tag import="java.util.Map"%>
 <%@ tag language="java" pageEncoding="UTF-8"%>
+<%@ tag trimDirectiveWhitespaces="true" %>
 <%@ tag dynamic-attributes="dynamicAttributes"  %>
 <%@ attribute name="data" required="true" type="java.util.List" rtexprvalue="true" %>
 <%@ attribute name="var"  required="true" %>
