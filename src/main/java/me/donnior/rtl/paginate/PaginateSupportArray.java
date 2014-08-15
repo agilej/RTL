@@ -2,6 +2,7 @@ package me.donnior.rtl.paginate;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Collection;
 
 
 public class PaginateSupportArray<E> extends ArrayList<E> implements PaginateSupport {
@@ -16,12 +17,12 @@ public class PaginateSupportArray<E> extends ArrayList<E> implements PaginateSup
 	private int page;
 	
 	
-	public PaginateSupportArray(List<E> result) {
-		super(result);
+	public PaginateSupportArray(Collection<E> data) {
+		super(data);
 	}
 
-	public PaginateSupportArray(List<E> result, int page, int pageSize, int total) {
-		this(result);
+	public PaginateSupportArray(Collection<E> data, int page, int pageSize, int total) {
+		this(data);
 		this.page = page;
 		this.pageSize = pageSize;
 		this.total = total;

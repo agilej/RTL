@@ -31,3 +31,5 @@ showcase/src/main/java/me/donnior/.DS_Store
 *.component
 
 showcase/.settings/org.eclipse.wst.common.project.facet.core.xml
+
+showcase/src/main/java/me/donnior/showcase/.DS_Store
