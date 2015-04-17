@@ -1,6 +1,7 @@
 package me.donnior.rtl.html;
 
-import com.google.common.base.Strings;
+
+import me.donnior.rtl.util.Strings;
 
 public class HtmlAnchor extends HtmlElement {
 

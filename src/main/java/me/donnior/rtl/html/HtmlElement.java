@@ -1,11 +1,12 @@
 package me.donnior.rtl.html;
 
+import me.donnior.rtl.util.Strings;
+
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Map;
 import java.util.Map.Entry;
 
-import com.google.common.base.Strings;
 
 public abstract class HtmlElement implements DynamicAttributeSupport {
 	
