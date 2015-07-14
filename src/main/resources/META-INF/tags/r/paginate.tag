@@ -17,7 +17,7 @@
 </c:if>
 <c:if test="${empty path}" >
 	<%
-		me.donnior.rtl.paginate.PaginateUtil util = me.donnior.rtl.paginate.PaginateUtil.getInstance();
+		org.agilej.rtl.paginate.PaginateUtil util = org.agilej.rtl.paginate.PaginateUtil.getInstance();
 		request.setAttribute("RTLUri", util.getPaginatePath(request));
 	%>
 </c:if>
@@ -45,7 +45,7 @@
 <%-- set variables that needed for calculating pagings --%>
 
 <%
-	me.donnior.rtl.paginate.PaginateSupport array = (me.donnior.rtl.paginate.PaginateSupport)data;
+	org.agilej.rtl.paginate.PaginateSupport array = (org.agilej.rtl.paginate.PaginateSupport)data;
 	int total = array.getTotal();
 	request.setAttribute("total", total);
 

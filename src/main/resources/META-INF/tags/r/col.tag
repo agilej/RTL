@@ -1,5 +1,5 @@
-<%@ tag import="me.donnior.rtl.html.HtmlTable"%>
-<%@ tag import="me.donnior.rtl.html.HtmlTableHeadCell"%>
+<%@ tag import="org.agilej.rtl.html.HtmlTable"%>
+<%@ tag import="org.agilej.rtl.html.HtmlTableHeadCell"%>
 <%@ tag import="java.util.Map"%>
 <%@ tag language="java" pageEncoding="UTF-8" %>
 <%@ tag trimDirectiveWhitespaces="true" %>

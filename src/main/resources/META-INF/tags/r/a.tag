@@ -1,4 +1,4 @@
-<%@ tag import="me.donnior.rtl.html.HtmlAnchor"%>
+<%@ tag import="org.agilej.rtl.html.HtmlAnchor"%>
 <%@ tag import="java.util.Map"%>
 <%@ tag language="java" pageEncoding="UTF-8"%>
 <%@ tag trimDirectiveWhitespaces="true" %>

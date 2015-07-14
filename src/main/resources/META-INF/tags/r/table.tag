@@ -1,5 +1,5 @@
-<%@ tag import="me.donnior.rtl.html.HtmlTable"%>
-<%@ tag import="me.donnior.rtl.html.LoopStatus"%>
+<%@ tag import="org.agilej.rtl.html.HtmlTable"%>
+<%@ tag import="org.agilej.rtl.html.LoopStatus"%>
 <%@ tag import="java.util.Map"%>
 <%@ tag import="java.util.Iterator"%>
 <%@ tag language="java" pageEncoding="UTF-8"%>

@@ -6,18 +6,13 @@ There are three category tags in the package:
 
 # Installation
 
-Currently you need to install the artifact manually
-
-1. `git clone git://github.com/donnior/RTL.git`
-2. `mvn install`
-
 Add dependency in maven to use it.
 
 ```xml
 <dependency>
-    <groupId>me.donnior</groupId>
+    <groupId>org.agilej</groupId>
     <artifactId>rtl</artifactId>
-    <version>0.3</version>
+    <version>0.1-SNAPSHOT</version>
 </dependency>
 ```
 

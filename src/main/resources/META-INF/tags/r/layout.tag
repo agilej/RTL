@@ -1,4 +1,4 @@
-<%@ tag import="me.donnior.rtl.template.TemplateResolver"%>
+<%@ tag import="org.agilej.rtl.template.TemplateResolver"%>
 <%@ tag language="java" pageEncoding="UTF-8"%>
 <%@ tag trimDirectiveWhitespaces="true" %>
 

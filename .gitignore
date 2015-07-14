@@ -5,8 +5,6 @@ target/
 
 .settings/org.eclipse.jdt.core.prefs
 
-src/main/java/me/donnior/fava/FArrayList.java
-
 .settings/org.eclipse.wst.common.component
 
 .project
@@ -18,21 +16,12 @@ src/main/java/me/donnior/fava/FArrayList.java
 *.DS_Store
 .DS_Store
 
-showcase/src/.DS_Store
-
-showcase/src/main/.DS_Store
-
-showcase/src/main/java/.DS_Store
-
-showcase/src/main/java/me/.DS_Store
-
-showcase/src/main/java/me/donnior/.DS_Store
+**/*.DS_Store
 
 *.component
 
 showcase/.settings/org.eclipse.wst.common.project.facet.core.xml
 
-showcase/src/main/java/me/donnior/showcase/.DS_Store
 
 rtl.iml
 
