@@ -12,22 +12,19 @@
 
 package org.agilej.rtl.paginate;
 
-import java.util.Iterator;
 import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
 
-import com.google.common.base.Splitter;
-import org.agilej.rtl.util.Lists;
 import org.agilej.rtl.util.Strings;
 
 public class PaginateUtil {
 
     private static final String QUERY_STRING_STARTFIX = "?";
 
-    private static final String PARAM_KEY_VALUE_SEPERATOR = "=";
+    private static final String PARAM_KEY_VALUE_SEPARATOR = "=";
 
-    private static final String PARAMS_SEPERATOR = "&";
+    private static final String PARAMS_SEPARATOR = "&";
 
     private static final String PAGINATION_NAME_IN_PARAMS = "page";
 
@@ -55,26 +52,27 @@ public class PaginateUtil {
         return url;
     }
 
-    private String extractQueryStringWithoutPagination(String queryString,
-            HttpServletRequest request) {
-//        request.getpa
+    private String extractQueryStringWithoutPagination(String queryString, HttpServletRequest request) {
         StringBuilder urlBuilder = new StringBuilder();
         if (!Strings.isNullOrEmpty(queryString)) {
             urlBuilder.append(QUERY_STRING_STARTFIX);
-            Iterator<String> params = Splitter.on(PARAMS_SEPERATOR).omitEmptyStrings().split(queryString).iterator(); // "a=1&b=2&c="
-            while (params.hasNext()) {
-                String q = params.next(); // "a=1"
-                List<String> kv = Lists.newArrayList(Splitter.on(PARAM_KEY_VALUE_SEPERATOR).omitEmptyStrings().split(q)); // "a,1"
-                String name = kv.isEmpty() ? null : kv.get(0);
+
+            String[] params = queryString.split(PARAMS_SEPARATOR);
+            List<String> omittedEmptyStrings = Strings.omitEmpty(params);
+
+            for(String q : omittedEmptyStrings){
+                String[] kv = q.split(PARAM_KEY_VALUE_SEPARATOR);
+                String name = kv.length > 0 ? kv[0] : null;
+                String value = kv.length > 1 ? kv[1] : null;
                 if (name != null && !getPaginationNameInParams().equals(name)) {
-                    urlBuilder.append(name).append(PARAM_KEY_VALUE_SEPERATOR)
-                            .append(request.getParameter(name))
-                            .append(PARAMS_SEPERATOR);
+                    urlBuilder.append(name).append(PARAM_KEY_VALUE_SEPARATOR)
+                            .append(Strings.nullToEmpty(value))
+                            .append(PARAMS_SEPARATOR);
                 }
             }
         }
         String result = urlBuilder.toString();
-        result = result.endsWith(PARAMS_SEPERATOR) ? result.substring(0, result.length()-1)  : result ;
+        result = result.endsWith(PARAMS_SEPARATOR) ? result.substring(0, result.length()-1)  : result ;
         return QUERY_STRING_STARTFIX.endsWith(result) ? "" : result;
     }
 
@@ -86,4 +84,6 @@ public class PaginateUtil {
         return Strings.isNullOrEmpty(paginationNameInParams) ? PAGINATION_NAME_IN_PARAMS
                 : this.paginationNameInParams;
     }
+
+
 }
