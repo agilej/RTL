@@ -18,10 +18,24 @@ Add dependency in maven to use it.
 
 # Templating Tags
 
-## How to use
+For using `RTL` templating tags you need to complete three steps:
 
-Set the template page in web.xml, make sure the param name is `RTLTempatePage`; if not, RTL will use the default template page which is <code>WEB-INF/views/layout/template.jsp</code>; for some complex scenes, you can use specify a <code>RTLTemplateResolverClass</code> class which implemented <code>TemplateResolver</code>in web.xml.
+1. tell `rtl` where to locate your template page
+2. define your template page
+3. use your template in every page
 
+
+## Locate your template file
+
+`RTL` can use three ways to locate template file.
+
+* Default template file
+
+```
+WEB-INF/views/layout/template.jsp
+```
+
+* Define template file in `web.xml`
 
 ```xml
 <context-param>
@@ -29,7 +43,8 @@ Set the template page in web.xml, make sure the param name is `RTLTempatePage`; 
     <param-value>/WEB-INF/views/layout/template.jsp</param-value>
 </context-param>
 ```
-or 
+
+* Register customized TemplateResolver
 
 ```xml
 <context-param>
@@ -38,7 +53,10 @@ or
 </context-param>
 ```
 
-Define your template page
+
+
+
+## Define your template page
 
 ```html
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
@@ -75,7 +93,20 @@ Define your template page
 </html>
 ```
 
-Use the template in your every page needed to be templated. Like this:
+### Tags Explain
+
+* `yieldTitle`
+    Used in template page, can set the single page's title
+* `yieldStylesheets`
+    Used in template page, add the page specific style
+* `yieldJavascripts`
+    `Used in template page, add the page specific javascript
+* `yieldBody`
+    Used in template page, output the your templated page
+
+## Use template page.
+
+Use the template in your every page needed to be templated. For exmaple you have a sample jsp page named `sample.jsp` and want to use a template.
 
 ```html
 <%@ page language="java" contentType="text/html; charset=UTF-8"
@@ -93,22 +124,14 @@ Use the template in your every page needed to be templated. Like this:
 </r:layout>
 ```
 
-## Tags Explain
+### Tags Explain
 
-* yieldTitle       
-    `Used in template page, can set the single page's title`
-* yieldStylesheets  
-    `Used in template page, add the page specific style`
-* yieldJavascripts  
-    `Used in template page, add the page specific javascript`
-* yieldBody  
-    `Used in template page, output the your templated page`
-* layout  
-    `Used in templated page, declare current page needs templated`
-* stylesheet  
-    `Used in templated page, specify one stylesheet which needed by current page`
-* javascript  
-    `Used in templated page, specify one javascript which needed by current page`
+* `layout`
+    Used in templated page, declare current page needs templated
+* `stylesheet`
+    Used in templated page, specify one stylesheet which needed by current page
+* `javascript`
+    Used in templated page, specify one javascript which needed by current page
 
 # Paginate Tags  
 
